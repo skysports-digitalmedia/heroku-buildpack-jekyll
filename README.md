@@ -13,7 +13,7 @@ Specify this buildpack in the `buildpack` key in a top-level `stackato.yml` file
 ```
 name: yoursite
 mem: 128M
-buildpack: git://github.com/troytop/stackato-buildpack-jekyll.git
+buildpack: git://github.com/ActiveState/heroku-buildpack-jekyll.git
 ```
 
 Push the application to the target with `stackato push -n`.
