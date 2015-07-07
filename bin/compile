@@ -18,7 +18,7 @@ gempath:
 EOF
 
 message "Installing jekyll version"
-gem install therubyracer | indent
+gem install therubyracer --platform ruby | indent
 gem install jekyll --no-rdoc --no-ri | indent
 
 # Run Jekyll
