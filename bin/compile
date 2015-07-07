@@ -18,7 +18,7 @@ gempath:
 EOF
 
 message "Installing libv8"
-gem install libv8  --no-rdoc --no-ri -- --with-system-v8 | indent
+gem install libv8 -v '3.16.14' --no-rdoc --no-ri | indent
 message "Installing therubyracer"
 gem install therubyracer --no-rdoc --no-ri  | indent
 message "Installing jekyll"
