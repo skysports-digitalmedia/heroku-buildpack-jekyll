@@ -17,8 +17,11 @@ gempath:
 - $BUILD_ROOT/.gems
 EOF
 
-message "Installing jekyll version"
+message "Installing libv8"
+gem install libv8 | indent
+message "Installing therubyracer"
 gem install therubyracer --platform ruby | indent
+message "Installing jekyll"
 gem install jekyll --no-rdoc --no-ri | indent
 
 # Run Jekyll
