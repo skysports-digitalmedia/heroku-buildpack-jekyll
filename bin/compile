@@ -17,8 +17,8 @@ gempath:
 - $BUILD_ROOT/.gems
 EOF
 
-message "Installing jekyll version 1.3.0"
-gem install jekyll -v 1.3.0 --no-rdoc --no-ri | indent
+message "Installing jekyll version"
+gem install jekyll --no-rdoc --no-ri | indent
 
 # Run Jekyll
 message "Setting environment variables"
