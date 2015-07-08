@@ -18,12 +18,13 @@ gempath:
 EOF
 
 message "Installing node"
-cd $BUILD_ROOT
+mkdir $BUILD_ROOT/node
 curl -LO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
-cd /usr/local && tar --strip-components 1 -xzf $BUILD_ROOT/node-v0.12.6-linux-x64.tar.gz
+cd $BUILD_ROOT/node && tar --strip-components 1 -xzf $BUILD_ROOT/node-v0.12.6-linux-x64.tar.gz
+export PATH=$PATH:$BUILD_ROOT/node/bin
 
 message "Installing jekyll"
-gem install jekyll --no-rdoc --no-ri | indent
+EXECJS_RUNTIME=node gem install jekyll --no-rdoc --no-ri | indent
 
 # Run Jekyll
 message "Setting environment variables"
