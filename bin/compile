@@ -17,11 +17,11 @@ gempath:
 - $BUILD_ROOT/.gems
 EOF
 
-message "Installing libv8"
-gem uninstall libv8
-gem install libv8 -v '3.16.14' --no-rdoc --no-ri | indent
+# message "Installing libv8"
+# gem uninstall libv8
+# gem install libv8 -v '3.16.14' --no-rdoc --no-ri | indent
 message "Installing therubyracer"
-gem install therubyracer --no-rdoc --no-ri  | indent
+gem install therubyracer -v 0.11.4  --no-rdoc --no-ri  | indent
 message "Installing jekyll"
 gem install jekyll --no-rdoc --no-ri | indent
 
