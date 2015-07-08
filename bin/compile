@@ -17,11 +17,11 @@ gempath:
 - $BUILD_ROOT/.gems
 EOF
 
-# message "Installing libv8"
-# gem uninstall libv8
-gem install libv8 -v '3.11.8.4' --no-rdoc --no-ri | indent
-message "Installing therubyracer"
-gem install therubyracer -v '0.10.2'  --no-rdoc --no-ri  | indent
+message "Installing node"
+cd $BUILD_ROOT
+curl -LO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
+cd /usr/local && tar --strip-components 1 -xzf $BUILD_ROOT/node-v0.12.6-linux-x64.tar.gz
+
 message "Installing jekyll"
 gem install jekyll --no-rdoc --no-ri | indent
 
