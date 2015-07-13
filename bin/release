@@ -6,5 +6,5 @@ addons:
 config_vars:
   DUMMY: 1
 default_process_types:
-  web: env GEM_HOME=./.gems EXECJS_RUNTIME=node PATH=\$PATH:\$BUILD_ROOT/../node/bin ./.gems/bin/jekyll serve --port \$PORT
+  web: env GEM_HOME=./.gems EXECJS_RUNTIME=Node PATH=\$PATH:\$BUILD_ROOT/../node/bin ./.gems/bin/jekyll serve --port \$PORT
 EOF
