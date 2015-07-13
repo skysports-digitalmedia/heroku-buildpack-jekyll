@@ -20,7 +20,7 @@ EOF
 message "Installing node"
 mkdir $BUILD_ROOT/node
 cd $BUILD_ROOT
-curl -LO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
+curl -sLO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
 cd $BUILD_ROOT/node && tar --strip-components 1 -xzf $BUILD_ROOT/node-v0.12.6-linux-x64.tar.gz
 export PATH=$PATH:$BUILD_ROOT/node/bin
 
@@ -34,4 +34,4 @@ export PATH=$BUILD_ROOT/.gems/bin:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Compiling Jekyll site"
-$BUILD_ROOT/.gems/bin/jekyll build | indent
+$BUILD_ROOT/.gems/bin/jekyll serve --port $VCAP_APP_PORT | indent
