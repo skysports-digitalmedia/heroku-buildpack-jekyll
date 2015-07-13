@@ -34,5 +34,6 @@ export PATH=$BUILD_ROOT/.gems/bin:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Compiling Jekyll site"
+env
 message "$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $VCAP_APP_PORT"
 $BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $VCAP_APP_PORT | indent
