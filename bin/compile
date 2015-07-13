@@ -35,5 +35,6 @@ export LC_ALL=en_US.UTF8
 
 message "Compiling Jekyll site"
 env
+cd $BUILD_ROOT
 message "$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $PORT"
-$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $PORT | indent
+$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT  | indent
