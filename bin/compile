@@ -18,11 +18,11 @@ gempath:
 EOF
 
 message "Installing node"
-mkdir $BUILD_ROOT/node
-cd $BUILD_ROOT
+mkdir $BUILD_ROOT/../node
+cd $BUILD_ROOT../
 curl -sLO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
-cd $BUILD_ROOT/node && tar --strip-components 1 -xzf $BUILD_ROOT/node-v0.12.6-linux-x64.tar.gz
-export PATH=$PATH:$BUILD_ROOT/node/bin
+cd $BUILD_ROOT/../node && tar --strip-components 1 -xzf $BUILD_ROOT/../node-v0.12.6-linux-x64.tar.gz
+export PATH=$PATH:$BUILD_ROOT/../node/bin
 
 message "Installing jekyll"
 EXECJS_RUNTIME=node gem install jekyll --no-rdoc --no-ri | indent
@@ -34,4 +34,5 @@ export PATH=$BUILD_ROOT/.gems/bin:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Compiling Jekyll site"
-$BUILD_ROOT/.gems/bin/jekyll serve --port $VCAP_APP_PORT | indent
+message "$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $VCAP_APP_PORT"
+$BUILD_ROOT/.gems/bin/jekyll serve -s $BUILD_ROOT --port $VCAP_APP_PORT | indent
