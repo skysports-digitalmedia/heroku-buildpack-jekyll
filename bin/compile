@@ -19,7 +19,7 @@ EOF
 
 message "Installing node"
 mkdir $BUILD_ROOT/../node
-cd $BUILD_ROOT../
+cd $BUILD_ROOT/../
 curl -sLO https://nodejs.org/dist/v0.12.6/node-v0.12.6-linux-x64.tar.gz
 cd $BUILD_ROOT/../node && tar --strip-components 1 -xzf $BUILD_ROOT/../node-v0.12.6-linux-x64.tar.gz
 export PATH=$PATH:$BUILD_ROOT/../node/bin
